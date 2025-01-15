@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for radio knobs */
+@layer components {
+  .radio-knob {
+    @apply relative w-16 h-16 rounded-full bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] 
+           border-2 border-[#3a3a3a] shadow-lg cursor-pointer 
+           transform hover:scale-105 transition-transform;
+  }
+
+  .radio-knob::before {
+    content: '';
+    @apply absolute top-1/2 left-1/2 w-1 h-8 bg-[#ffd700] rounded-full 
+           transform -translate-x-1/2 -translate-y-1/2 -rotate-45;
+  }
+}
+
+/* Custom scrollbar for frequency display */
+.frequency-scale::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
