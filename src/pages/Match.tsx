@@ -37,8 +37,8 @@ function Match() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-900 to-amber-950 p-8">
-      <Link to="/" className="text-white mb-8 flex items-center gap-2 hover:text-amber-300">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 p-8">
+      <Link to="/" className="text-white mb-8 flex items-center gap-2 hover:text-yellow-400">
         <ArrowLeft size={20} /> Back to Matches
       </Link>
 
@@ -46,13 +46,13 @@ function Match() {
         {/* Vintage Radio UI */}
         <div className="relative w-full max-w-2xl mx-auto">
           {/* Radio Body */}
-          <div className="bg-[#4a3121] rounded-lg shadow-2xl p-6 border-t-4 border-[#5c3d2a]">
+          <div className="bg-[#3b2f2f] rounded-3xl shadow-2xl p-8 border-t-4 border-[#f4a261]">
             {/* Top Panel with Display and Frequency */}
-            <div className="bg-[#1a1a1a] rounded-md p-4 mb-6">
+            <div className="bg-[#2c2c2c] rounded-md p-6 mb-6">
               {/* Frequency Scale */}
-              <div className="h-12 bg-[#2a2a2a] rounded-sm mb-4 relative overflow-hidden">
+              <div className="h-12 bg-[#3d3d3d] rounded-sm mb-4 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full h-0.5 bg-[#463020]"></div>
+                  <div className="w-full h-0.5 bg-[#ffd700]"></div>
                   <div className="absolute h-full w-0.5 bg-[#ffd700] left-1/2 transform -translate-x-1/2"></div>
                 </div>
                 <div className="absolute inset-0 flex justify-between px-4 items-center text-[#ffd700] text-xs font-mono">
@@ -63,7 +63,7 @@ function Match() {
               </div>
               
               {/* Digital Display */}
-              <div className="bg-[#1e2d1e] p-3 rounded text-[#4a9c4a] font-mono">
+              <div className="bg-[#1a1a1a] p-4 rounded text-[#ffd700] font-mono">
                 <div className="text-xs opacity-75">NOW PLAYING</div>
                 <div className="text-lg">{matchData.title}</div>
                 <div className="text-sm">{matchData.teams.score1} | {matchData.teams.score2}</div>
@@ -74,7 +74,7 @@ function Match() {
             <div className="grid grid-cols-4 gap-6 mb-6">
               {['VOLUME', 'TUNE', 'MODE', 'PRESET'].map((label, i) => (
                 <div key={i} className="flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a] border-2 border-[#3a3a3a] shadow-lg flex items-center justify-center cursor-pointer transform hover:scale-105 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#3d3d3d] to-[#2c2c2c] border-2 border-[#f4a261] shadow-xl flex items-center justify-center cursor-pointer transform hover:scale-105 transition-transform">
                     <div className="w-1 h-8 bg-[#ffd700] rounded-full transform -rotate-45"></div>
                   </div>
                   <span className="text-[#ffd700] text-xs mt-2">{label}</span>
@@ -86,21 +86,21 @@ function Match() {
             <div className="grid grid-cols-3 gap-4">
               {/* Mode Buttons */}
               <button 
-                className={`px-4 py-2 rounded bg-[#2a2a2a] text-[#ffd700] text-sm font-medium border border-[#3a3a3a] ${isPlaying ? 'bg-[#3a3a3a]' : ''}`}
+                className={`px-4 py-2 rounded bg-[#2c2c2c] text-[#ffd700] text-sm font-medium border border-[#f4a261] ${isPlaying ? 'bg-[#f4a261]' : ''}`}
                 onClick={() => setIsPlaying(!isPlaying)}
               >
                 {isPlaying ? 'PAUSE' : 'PLAY'}
               </button>
-              <button className="px-4 py-2 rounded bg-[#2a2a2a] text-[#ffd700] text-sm font-medium border border-[#3a3a3a]">
+              <button className="px-4 py-2 rounded bg-[#2c2c2c] text-[#ffd700] text-sm font-medium border border-[#f4a261]">
                 AM/FM
               </button>
-              <button className="px-4 py-2 rounded bg-[#2a2a2a] text-[#ffd700] text-sm font-medium border border-[#3a3a3a]">
+              <button className="px-4 py-2 rounded bg-[#2c2c2c] text-[#ffd700] text-sm font-medium border border-[#f4a261]">
                 MEMORY
               </button>
             </div>
 
             {/* Speaker Grille */}
-            <div className="mt-6 grid grid-cols-6 gap-1 bg-[#2a2a2a] p-4 rounded-lg">
+            <div className="mt-6 grid grid-cols-6 gap-1 bg-[#2c2c2c] p-4 rounded-lg">
               {Array.from({ length: 24 }).map((_, i) => (
                 <div key={i} className="w-full pt-[100%] bg-[#1a1a1a] rounded-full"></div>
               ))}
